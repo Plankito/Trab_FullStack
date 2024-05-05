@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "motherboards",
+  "info": {
+    "singularName": "motherboard",
+    "pluralName": "motherboards",
+    "displayName": "Motherboard",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Motherboard": {
+      "type": "string"
+    },
+    "carts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cart.cart",
+      "mappedBy": "motherboard"
+    },
+    "MotherboardId": {
+      "type": "uid",
+      "targetField": "Motherboard",
+      "required": true
+    },
+    "Plataforma": {
+      "type": "string",
+      "default": "AMD",
+      "required": true
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "carts",
+  "info": {
+    "singularName": "cart",
+    "pluralName": "carts",
+    "displayName": "Cart",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Cart": {
+      "type": "string"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "cart"
+    },
+    "motherboard": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::motherboard.motherboard",
+      "inversedBy": "carts"
+    },
+    "CartId": {
+      "type": "uid",
+      "targetField": "Cart",
+      "required": true
+    }
+  }
+}
